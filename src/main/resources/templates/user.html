@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .user-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .user-details p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .user-details strong {
+            color: #333;
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .logout-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/logout}" method="post">
+    <button type="submit" class="logout-button">Logout</button>
+</form>
+
+<div class="user-container">
+    <h2>User Information</h2>
+    <div class="user-details">
+        <p><strong>Name:</strong> <span th:text="${user.name}">John</span></p>
+        <p><strong>Surname:</strong> <span th:text="${user.surname}">Doe</span></p>
+        <p><strong>Salary:</strong> <span th:text="${user.salary}">50000</span></p>
+        <p><strong>Department:</strong> <span th:text="${user.department}">IT</span></p>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>
